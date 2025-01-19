@@ -1,6 +1,8 @@
 'use client'
 
 import { useEditor, EditorContent } from '@tiptap/react'
+import { Color } from '@tiptap/extension-color'
+import Highlight from '@tiptap/extension-highlight'
 import StarterKit from '@tiptap/starter-kit'
 import TaskItem from '@tiptap/extension-task-item'
 import ImageResize from 'tiptap-extension-resize-image'
@@ -61,6 +63,10 @@ export const Editor = () => {
       TextStyle,
       StarterKit,
       TaskList,
+      Color,
+      Highlight.configure({
+        multicolor: true,
+      }),
       TaskItem.configure({
         nested: true,
       }),
