@@ -6,11 +6,13 @@ import TaskItem from '@tiptap/extension-task-item'
 import ImageResize from 'tiptap-extension-resize-image'
 import TaskList from '@tiptap/extension-task-list'
 import Image from '@tiptap/extension-image'
+import FontFamily from '@tiptap/extension-font-family'
 import Table from '@tiptap/extension-table'
 import TableCell from '@tiptap/extension-table-cell'
 import TableHeader from '@tiptap/extension-table-header'
 import TableRow from '@tiptap/extension-table-row'
 import Underline from '@tiptap/extension-underline'
+import TextStyle from '@tiptap/extension-text-style'
 
 import { useEditorStore } from '@/store/use-editor-store'
 
@@ -55,7 +57,9 @@ export const Editor = () => {
       }
 
     },
-    extensions: [StarterKit,
+    extensions: [
+      TextStyle,
+      StarterKit,
       TaskList,
       TaskItem.configure({
         nested: true,
@@ -63,6 +67,7 @@ export const Editor = () => {
       Table.configure({
         resizable: true,
       }),
+      FontFamily,
       TableRow,
       TableHeader,
       TableCell,
