@@ -15,6 +15,8 @@ import TableHeader from '@tiptap/extension-table-header'
 import TableRow from '@tiptap/extension-table-row'
 import Underline from '@tiptap/extension-underline'
 import TextStyle from '@tiptap/extension-text-style'
+import Link from '@tiptap/extension-link'
+
 
 import { useEditorStore } from '@/store/use-editor-store'
 
@@ -77,6 +79,11 @@ export const Editor = () => {
       TableRow,
       TableHeader,
       TableCell,
+      Link.configure({
+        openOnClick: false,
+        autolink: true,
+        defaultProtocol: "https"
+      }),
       Image,
       ImageResize,
       Underline,
